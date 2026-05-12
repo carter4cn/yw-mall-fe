@@ -53,3 +53,41 @@ export interface UserInfoResp {
   avatar: string
   createTime: number
 }
+
+// S1.2 收银台
+export interface CashierInfo {
+  orderId: number
+  orderNo: string
+  amount: number // cents
+  expireAt: number // unix sec
+  channels: string[]
+  mockEnabled: boolean
+}
+
+// S1.7 订单详情（含时间线字段）
+export interface OrderItem {
+  productId: number
+  productName: string
+  price: number
+  quantity: number
+}
+
+export interface OrderDetailResp {
+  id: number
+  orderNo: string
+  userId: number
+  totalAmount: number
+  status: number // 0=待支付 1=已支付 2=已发货 3=已完成 4=已取消
+  items: OrderItem[]
+  createTime: number
+  payTime?: number
+  shipTime?: number
+  completeTime?: number
+  cancelTime?: number
+  cancelReason?: string
+}
+
+export interface OrderListResp {
+  orders: OrderDetailResp[]
+  total: number
+}

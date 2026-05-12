@@ -1,0 +1,14 @@
+import { request } from './request'
+import type { OrderDetailResp, OrderListResp } from '@/types/api'
+
+const BASE = '/api/order'
+
+export const getOrderDetail = (id: number) =>
+  request<OrderDetailResp>({ url: `${BASE}/detail/${id}`, auth: true })
+
+export const listMyOrders = (params: { status?: number; page?: number; pageSize?: number } = {}) =>
+  request<OrderListResp>({
+    url: `${BASE}/list`,
+    data: { status: params.status ?? -1, page: params.page ?? 1, pageSize: params.pageSize ?? 20 },
+    auth: true,
+  })

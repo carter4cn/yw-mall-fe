@@ -54,6 +54,8 @@
     "@dcloudio/uni-mp-xhs": "3.0.0-4080420251103001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4080420251103001",
     "@vue/devtools-shared": "^8.1.1",
+    "birpc": "^4.0.0",
+    "hookable": "^6.1.1",
     "perfect-debounce": "^2.1.0",
     "pinia": "^3.0.4",
     "pinia-plugin-persistedstate": "^4.7.1",
