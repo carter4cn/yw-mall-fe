@@ -269,7 +269,7 @@ onUnmounted(() => {
 }
 
 .dev-hint {
-  background: lighten(#FFEBD9, 5%);
+  background: #FFF5E6;
   color: $color-warning;
   padding: $space-md;
   border-radius: 8px;

@@ -91,3 +91,30 @@ export interface OrderListResp {
   orders: OrderDetailResp[]
   total: number
 }
+
+// S2 Refund
+export interface RefundRequest {
+  id: number
+  orderId: number
+  orderNo: string
+  userId: number
+  shopId: number
+  amount: number
+  reason: string
+  evidence?: string[]
+  status: number // 0=pending,1=approved,2=rejected,3=arbitrating,4=refunded,5=final_rejected
+  merchantRemark?: string
+  merchantHandleTime?: number
+  adminRemark?: string
+  adminHandleTime?: number
+  appealReason?: string
+  appealTime?: number
+  refundNo?: string
+  refundCompleteTime?: number
+  createTime: number
+}
+
+export interface ListRefundRequestsResp {
+  requests: RefundRequest[]
+  total: number
+}

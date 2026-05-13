@@ -62,6 +62,9 @@
           去支付 ¥{{ (order.totalAmount / 100).toFixed(2) }}
         </wd-button>
       </view>
+      <view v-else-if="canRefund" class="bottom-bar">
+        <wd-button block size="large" @tap="goRefund">申请退款</wd-button>
+      </view>
     </template>
   </view>
 </template>
@@ -154,6 +157,18 @@ function formatCountdown(sec: number): string {
 function goCashier() {
   if (!order.value) return
   uni.navigateTo({ url: `/pages/payment/cashier?orderId=${order.value.id}` })
+}
+
+const canRefund = computed(() => {
+  if (!order.value) return false
+  return [1, 2, 3].includes(order.value.status)
+})
+
+function goRefund() {
+  if (!order.value) return
+  uni.navigateTo({
+    url: `/pages/refund/apply?orderId=${order.value.id}&amount=${order.value.totalAmount}`,
+  })
 }
 
 function getOrderIdFromRoute(): number {

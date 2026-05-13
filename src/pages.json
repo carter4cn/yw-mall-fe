@@ -57,6 +57,18 @@
     {
       "path": "pages/cart/index",
       "style": { "navigationBarTitleText": "购物车" }
+    },
+    {
+      "path": "pages/refund/apply",
+      "style": { "navigationBarTitleText": "申请退款" }
+    },
+    {
+      "path": "pages/refund/detail",
+      "style": { "navigationBarTitleText": "退款详情" }
+    },
+    {
+      "path": "pages/refund/list",
+      "style": { "navigationBarTitleText": "我的退款" }
     }
   ],
   "tabBar": {
