@@ -45,7 +45,7 @@ async function refresh() {
   loading.value = true
   try {
     const resp = await addressApi.listAddresses()
-    items.value = resp.items ?? []
+    items.value = resp.addresses ?? []
   } catch (err) {
     showError(err)
   } finally {

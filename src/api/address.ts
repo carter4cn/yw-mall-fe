@@ -14,7 +14,7 @@ export interface AddressInput {
 }
 
 export const listAddresses = () =>
-  request<{ items: AddressItem[] }>({ url: `${BASE}/list`, auth: true })
+  request<{ addresses: AddressItem[] }>({ url: `${BASE}/list`, auth: true })
 
 export const getAddress = (id: number) =>
   request<AddressItem>({ url: `${BASE}/${id}`, auth: true })
